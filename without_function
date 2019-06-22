@@ -1,0 +1,30 @@
+# coding:utf-8
+
+# The proposal of the exercice is to calculate the taxed price (TTC) of a product based on its raw price (HT) with two decimals.
+
+print("The proposal of the exercice is to calculate the taxed price (TTC) of any product based on its raw price (HT).")
+
+name_product = "product"
+raw_price = -1
+tax_price = 0
+    
+while True :
+    try :
+        name_product = str(input("what is the product you want to estimate ?")) 
+        break
+    except ValueError :
+        print("Please enter a string value")
+
+while raw_price < 0:
+    try :
+        raw_price = float(input("Please enter the raw price of this " + str(name_product) + " :"))  
+    except ValueError :
+        print(str(name_product), "must be a positive float number ;) Try again...")
+
+raw_price_round= round(raw_price,2)
+taxe_value = 1.196
+taxed_price = raw_price * taxe_value
+taxed_price_round = round(taxed_price,2)
+
+print("the taxed price of this " + str(name_product) + ", based on the raw price of " + str(raw_price_round) + "€, is " + str(taxed_price_round) + "€.")
+
