@@ -1,6 +1,6 @@
 # coding:utf-8
 
-# The proposal of the exercice is to calculate the taxed price (TTC) of a product based on its raw price (HT).
+# The proposal of the exercice is to calculate the taxed price (TTC) of a product based on its raw price (HT) with two decimals.
 
 def name_product(product) :
     while True :
@@ -28,9 +28,11 @@ taxe_value = 1.196
 
 product = name_product(product)
 x = raw_price(product)
+x1 = round (x,2)
 y = x * taxe_value
+z = round (y,2)
 
 
+print("the taxed price of this " + str(product) + ", base on the raw price of " + str(x1) + "€, is " + str(z) + "€.")
 
-print("the taxed price of this " + str(product) + ", base on the raw price of " + str(x) + "€, is " + str(y) + "€.")
 
