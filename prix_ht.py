@@ -1,38 +1,35 @@
 # coding:utf-8
 
-# The proposal of the exercice is to calculate the taxed price (TTC) of a product based on its raw price (HT) with two decimals.
+"""The proposal of the exercice is to calculate the taxed price (TTC)
+of a product based on its raw price (HT) with two decimals.
+"""
 
-def name_product(product) :
-    while True :
-        try :
-            product = str(input("what is the product you want to estimate ?")) 
-            return product
-        except ValueError :
-            print("Please enter a string value")
+print("The proposal of the exercice is to calculate the taxed price (TTC)",
+      " of any product based on its raw price (HT).")
 
-def raw_price(x):
-    a = x
-    x = -1
-    while x < 0 :
-        try :
-            x = float(input("Please enter the raw price of this " + str(a) + " :"))  
-        except ValueError :
-            print(str(a), "must be a positive float number ;) Try again...")
-    return x
+NAME_PRODUCT = "product"
+RAW_PRICE = -1
+TAX_PRICE = 0
 
-print ("The proposal of the exercice is to calculate the taxed price (TTC) of any product based on its raw price (HT).")
+while True:
+    try:
+        NAME_PRODUCT = str(input("what is the product you want to estimate ?"))
+        break
+    except ValueError:
+        print("Please enter a string value")
 
-product = 0
-x = 0
-taxe_value = 1.196
+while RAW_PRICE < 0:
+    try:
+        RAW_PRICE = float(input("Please enter the raw price of this " +
+                                NAME_PRODUCT + " :"))
+    except ValueError:
+        print(NAME_PRODUCT, "must be a positive float number ;) Try again...")
 
-product = name_product(product)
-x = raw_price(product)
-x_round = round (x,2)
-y = x * taxe_value
-y_round = round (y,2)
+RAW_PRICE_ROUND = round(RAW_PRICE, 2)
+TAXE_VALUE = 1.196
+TAX_PRICE = RAW_PRICE * TAXE_VALUE
+TAX_PRICE_ROUND = round(TAX_PRICE, 2)
+"""Convert the raw price to the taxed price"""
 
-
-print("the taxed price of this " + str(product) + ", base on the raw price of " + str(x_round) + "€, is " + str(y_round) + "€.")
-
-
+print("the taxed price of this " + NAME_PRODUCT + ", based on the raw price of " +
+      str(RAW_PRICE_ROUND) + "€, is " + str(TAX_PRICE_ROUND) + "€.")
