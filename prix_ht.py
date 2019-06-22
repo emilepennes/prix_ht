@@ -28,11 +28,11 @@ taxe_value = 1.196
 
 product = name_product(product)
 x = raw_price(product)
-x1 = round (x,2)
+x_round = round (x,2)
 y = x * taxe_value
-z = round (y,2)
+y_round = round (y,2)
 
 
-print("the taxed price of this " + str(product) + ", base on the raw price of " + str(x1) + "€, is " + str(z) + "€.")
+print("the taxed price of this " + str(product) + ", base on the raw price of " + str(x_round) + "€, is " + str(y_round) + "€.")
 
 
